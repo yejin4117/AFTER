@@ -1,30 +1,18 @@
-package test.class1;
+package test.this1;
 
 public class RunCircle {
 
+	public static void showPrint(Circle c) {
+		System.out.printf("반지름이 %d㎝인 원의 둘레는 %.2f㎝\n", c.getR(), c.getCircum());
+		System.out.printf("반지름이 %d㎝인 원의 면적은 %.2f㎠\n", c.getR(), c.getArea());
+	}
+	
 	public static void main(String[] args) {
-		Circle c1 = new Circle();
-		c1.setR(5);
-		
-		Circle c2 = new Circle();
-		c2.setR(12);
-		
-		c1.calcCircum();
-		c1.calcArea();
-		
-		c2.calcCircum();
-		c2.calcArea();
-		
-		System.out.println("------------------------------------");
-		System.out.printf("반지름이 %d㎝인 원인 둘레는 %.3f㎝\n",c1.getR(),c1.getCircum());
-		System.out.printf("반지름이 %d㎝인 원인 면적는 %.3㎠\n",c1.getR(),c1.getCircum());
-		System.out.println("------------------------------------");
-		
-		System.out.println("------------------------------------");
-		System.out.printf("반지름이 %d㎝인 원인 둘레는 %.3f㎝\n",c2.getR(),c2.getCircum());
-		System.out.printf("반지름이 %d㎝인 원인 면적는 %.3㎠\n",c2.getR(),c2.getCircum());
-		System.out.println("------------------------------------");
-
+		Circle c1 = new Circle(15);
+		c1.showInfo();
+		Circle c2 = new Circle(6);
+		c2.showInfo();
+	
 	}
 
 }
