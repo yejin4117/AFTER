@@ -1,84 +1,35 @@
-package test.class1;
+package test.this1;
 
 public class TV {
-   
-   private String color;
-   private int size;
-   private String producer;
-   private int channel, volume;
-   
-   public void setColor(String color) {
-      this.color = color;
-   }
-      
-   public String getColor() {
-      return color;
-   }
+	
+	private String producer, color;
+	private int size;
+	
+	public String getProducer() {
+		return producer;
+	}
+	public String getColor() {
+		return color;
+	}
+	public int getSize() {
+		return size;
+	}
+	
+	public TV(int size) {
+		this.size = size;
+		System.out.printf("TV( %d ) 호출 됨.\n", size);
+	}
+	
+	public TV(int size, String color) {
+		this(size);
+		this.color = color;
+		System.out.printf("TV( %d, %s ) 호출 됨.\n", size, color);
+	}
+	
+	public TV(int size, String color, String producer) {
+		this(size, color);
+		this.producer = producer;
+		System.out.printf("TV( %d, %s, %s ) 호출 됨.\n", size, color, producer);
+	}
 
-   public int getSize() {
-      return size;
-   }
-
-   public void setSize(int size) {
-      this.size = size;
-   }
-
-   public String getProducer() {
-      return producer;
-   }
-
-   public void setProducer(String producer) {
-      this.producer = producer;
-   }
-
-   public int getChanner() {
-      return channel;
-   }
-
-   public void setChanner(int channer) {
-      this.channel = channer;
-   }
-
-   public int getVolume() {
-      return volume;
-   }
-
-   public void setVolume(int volume) {
-      this.volume = volume;
-   }
-   
-   public void powerOn() {
-      System.out.println(producer+" TV전원이 켜짐");
-   }
-   
-   public void powerOff() {
-      System.out.println(producer+" TV전원이 꺼짐");
-   }
-   
-   public void upChannel() {
-      channel++;
-      System.out.println("현재 채널은 "+channel+" 번");
-   }
-   
-   public void downChannel() {
-      channel--;
-      System.out.println("현재 채널은 "+channel+" 번");
-   }
-   
-   public void upVolume() {
-      volume++;
-      System.out.println("현재 볼륨은 "+volume);
-   }
-   
-   public void downVolume() {
-      volume--;
-      System.out.println("현재 볼륨은 "+volume);
-   }
-
-   @Override
-   public String toString() {
-      return "TV [color=" + color + ", size=" + size + ", producer=" + producer + ", channel=" + channel + ", volume="
-            + volume + "]";
-   }
-   
 }
