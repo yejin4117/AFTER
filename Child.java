@@ -1,13 +1,18 @@
-package test.final1;
+package p1;
 
-//부모클래스가 final이면 상속이 금지 된다.
-//부모클래스의 메소드가 final이면 메소드 재정의(overriding)가 금지된.
+import p1.Parent;
 
 public class Child extends Parent {
+// 상속계일때만 다른 패키지에 있는 부모의 멤버를 접근할 수 있다.
+	public void testProtected() {
+		num1 = 100;
+		System.out.println("Parent의 protected field num1 :  " + num1);
+		System.out.println();
+	}
 	
-//	@Override
-//	public void rest() {
-//		System.out.println("1시간 휴식한다.");
-//	}
+	public static void mai(String args[]) {
+		Child c = new Child();
+		c.testProtected();
+	}
 
 }
