@@ -1,13 +1,19 @@
-package test.this1;
+package test.field1;
 
 public class TV {
+	String color;
+	int size;
+	public static String PRODUCER = "LGÀüÀÚ";
 	
-	private String producer, color;
-	private int size;
-	
-	public String getProducer() {
-		return producer;
+	public TV(String color, int size) {
+		this.color = color;
+		this.size = size;
 	}
+	
+	public TV() {
+		this("»ö±ò ¾øÀ½",0);
+	}
+	
 	public String getColor() {
 		return color;
 	}
@@ -15,21 +21,5 @@ public class TV {
 		return size;
 	}
 	
-	public TV(int size) {
-		this.size = size;
-		System.out.printf("TV( %d ) 호출 됨.\n", size);
-	}
 	
-	public TV(int size, String color) {
-		this(size);
-		this.color = color;
-		System.out.printf("TV( %d, %s ) 호출 됨.\n", size, color);
-	}
-	
-	public TV(int size, String color, String producer) {
-		this(size, color);
-		this.producer = producer;
-		System.out.printf("TV( %d, %s, %s ) 호출 됨.\n", size, color, producer);
-	}
-
 }
